@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boostonix - AI Marketing Agency</title>
+  <meta name="description" content="Boostonix is an AI-Powered Marketing Agency helping brands grow through UGC, Paid Ads, SEO, and smart content systems.">
+  <meta name="keywords" content="AI marketing, UGC, Paid Ads, Content Strategy, SEO, Boostonix, AI Agency India">
+  <meta name="author" content="Boostonix">
+  <link rel="icon" href="https://i.ibb.co/z8f8H1S/favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -109,6 +113,26 @@
       margin-top: 20px;
       font-weight: bold;
     }
+    .form-group {
+      margin: 15px 0;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    button#whatsappFormBtn {
+      background: #00b894;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 15px;
+    }
 
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
@@ -185,13 +209,32 @@
   </section>
 
   <section class="section" id="book">
-    <h2>Let's Talk Growth</h2>
-    <p>Click below to chat directly on WhatsApp and explore how we can grow your brand.</p>
-    <a href="https://wa.me/918486259416" class="whatsapp-btn">Chat on WhatsApp</a>
+    <h2>Free Strategy Session</h2>
+    <p>Fill in your details and we'll contact you directly on WhatsApp.</p>
+    <div class="form-group">
+      <input type="text" id="name" placeholder="Your Name">
+    </div>
+    <div class="form-group">
+      <input type="email" id="email" placeholder="Your Email">
+    </div>
+    <div class="form-group">
+      <input type="tel" id="phone" placeholder="Your Phone">
+    </div>
+    <button id="whatsappFormBtn">Send on WhatsApp</button>
   </section>
 
   <footer>
     <p>&copy; 2025 Boostonix. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById('whatsappFormBtn').addEventListener('click', function() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = `Hey Boostonix! Here are my details:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}`;
+      window.open(`https://wa.me/918486259416?text=${message}`, '_blank');
+    });
+  </script>
 </body>
 </html>
