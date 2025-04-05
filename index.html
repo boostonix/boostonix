@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boostonix - AI Marketing Agency</title>
@@ -264,7 +265,110 @@ window.addEventListener("load", function(){
   <footer>
     <p>&copy; 2025 Boostonix. All rights reserved.</p>
   </footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boostonix | Contact & Socials</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 30px;
+      color: #333;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #000;
+    }
+    .socials {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 30px 0;
+      gap: 15px;
+    }
+    .socials a {
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: 8px;
+      color: white;
+    }
+    .insta { background: #E1306C; }
+    .linkedin { background: #0e76a8; }
+    .twitter { background: #1DA1F2; }
 
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background: #111;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Contact Boostonix</h1>
+
+    <div class="socials">
+      <a class="insta" href="https://www.instagram.com/theboostonix" target="_blank">Instagram 1</a>
+      <a class="insta" href="https://www.instagram.com/yashhpareekk" target="_blank">Instagram 2</a>
+      <a class="linkedin" href="https://www.linkedin.com/in/yash-pareek001/" target="_blank">LinkedIn</a>
+      <a class="twitter" href="https://x.com/Boostonixagency" target="_blank">Twitter</a>
+    </div>
+
+    <form action="mailto:ceo@boostonix.agency" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>
   <script>
     document.getElementById('whatsappFormBtn').addEventListener('click', function() {
       const name = document.getElementById('name').value;
