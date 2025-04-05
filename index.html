@@ -1,125 +1,197 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Boostonix – AI-Powered Social Media Marketing Agency">
-  <title>Boostonix Agency</title>
+  <title>Boostonix - AI Marketing Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #111;
-      color: #fff;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
     }
     header {
+      background: linear-gradient(to right, #000000, #1e1e1e);
+      color: white;
+      padding: 60px 20px;
       text-align: center;
-      padding: 4rem 2rem 2rem;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    header h1 {
+      margin: 0;
+      font-size: 3.5em;
+      animation: fadeInDown 1s ease-in-out;
     }
-    p {
-      font-size: 1.1rem;
-      color: #aaa;
-      max-width: 700px;
-      margin: 0 auto 2rem;
+    header p {
+      font-size: 1.3em;
+      margin-top: 10px;
+      animation: fadeIn 1.5s ease-in-out;
     }
-    .cta-button {
-      background-color: #00ffc8;
-      color: #111;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
+    .cta {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 14px 35px;
+      background: #00b894;
+      color: white;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      border-radius: 30px;
+      font-weight: bold;
+      animation: fadeInUp 2s ease-in-out;
     }
-    .cta-button:hover {
-      background-color: #00c2a3;
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInSection 1s forwards;
     }
-    section {
-      padding: 3rem 2rem;
+    .section:nth-of-type(2) { animation-delay: 0.3s; }
+    .section:nth-of-type(3) { animation-delay: 0.5s; }
+    .section:nth-of-type(4) { animation-delay: 0.7s; }
+    .section:nth-of-type(5) { animation-delay: 0.9s; }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #111;
+    }
+    .founder {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+    .founder img {
+      width: 250px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .stats, .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    .stat, .review {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       text-align: center;
     }
-    .features, .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
+    .services ul {
+      list-style: none;
+      padding: 0;
     }
-    .feature, .service {
-      background-color: #1b1b1b;
-      padding: 2rem;
-      border-radius: 12px;
+    .services li {
+      background: #eee;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 10px;
     }
     footer {
+      background: #111;
+      color: white;
+      padding: 30px;
       text-align: center;
-      padding: 2rem;
-      color: #555;
-      font-size: 0.9rem;
+    }
+    a.whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInSection {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>We Scale Brands With AI-Powered Marketing 🚀</h1>
-    <p>Meta & Google Ads. Viral Content. UGC Videos. We build, manage and scale your digital presence while you focus on growth.</p>
-    <a class="cta-button" href="#contact">Book a Free Strategy Call</a>
+    <h1>Boostonix</h1>
+    <p>AI Powered Growth for Modern Brands</p>
+    <a href="#book" class="cta">Book a Call</a>
   </header>
 
-  <section>
-    <h2>Why Boostonix?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>AI-Powered Campaigns</h3>
-        <p>We use cutting-edge AI tools to craft high-converting ad creatives and copy.</p>
-      </div>
-      <div class="feature">
-        <h3>Done-For-You Growth</h3>
-        <p>From UGC videos to ad management, everything is taken care of by experts.</p>
-      </div>
-      <div class="feature">
-        <h3>Results That Speak</h3>
-        <p>Clients see 3X–10X ROAS within the first 30 days. You're next.</p>
-      </div>
+  <section class="section founder">
+    <img src="https://drive.google.com/file/d/1Ui69G94xXu_8cpytb70Iv9gT8ZXrMhlv/view?usp=sharing" alt="Yash Pareek - Founder" />
+    <div>
+      <h2>Meet the Founder</h2>
+      <p><strong>Yash Pareek</strong>, the visionary behind Boostonix, is passionate about scaling brands using the power of AI + Marketing. With expertise in UGC, Paid Ads, and Content Systems – he helps brands dominate their digital presence.</p>
     </div>
   </section>
 
-  <section>
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Content Creation</h3>
-        <p>High-quality reels, carousels, and UGC video ads crafted for virality and conversions.</p>
-      </div>
-      <div class="service">
-        <h3>Paid Ads Management</h3>
-        <p>Expert Meta & Google Ads campaigns optimized for maximum ROAS.</p>
-      </div>
-      <div class="service">
-        <h3>Website + SEO</h3>
-        <p>Stunning landing pages and SEO strategies to get found and convert fast.</p>
-      </div>
+  <section class="section stats">
+    <div class="stat">
+      <h3>23+ Brands</h3>
+      <p>Successfully scaled across various niches</p>
+    </div>
+    <div class="stat">
+      <h3>$550K+</h3>
+      <p>Revenue Generated for Clients</p>
+    </div>
+    <div class="stat">
+      <h3>$90K+</h3>
+      <p>Ad Spend Managed</p>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Book a Call</h2>
-    <p>Let’s talk about how Boostonix can help you grow. Pick a time that works for you.</p>
-   <a class="cta-button" href="https://wa.me/918486259416?text=Hi%20Boostonix%2C%20I%20want%20to%20scale%20my%20brand%20with%20AI-marketing" target="_blank">
-  Book on WhatsApp
-</a>
+  <section class="section services">
+    <h2>What We Offer</h2>
+    <ul>
+      <li>Meta (Facebook & Instagram) Ads</li>
+      <li>Google Ads & YouTube Campaigns</li>
+      <li>UGC Video Creation & Editing</li>
+      <li>Content Strategy & Scheduling</li>
+      <li>SEO + Landing Page Optimization</li>
+      <li>Website Design & Conversions</li>
+    </ul>
+  </section>
 
+  <section class="section reviews">
+    <div class="review">
+      <p>“Boostonix scaled our Shopify store to $80K/month within 3 months. Highly recommended!”</p>
+      <strong>- Emily Carter, USA</strong>
+    </div>
+    <div class="review">
+      <p>“Mere real estate leads ka cost aadha kar diya inhone, bahut hi amazing team hai!”</p>
+      <strong>- Rahul Mehta, India</strong>
+    </div>
+    <div class="review">
+      <p>“They made content that actually converts, finally an agency that understands business!”</p>
+      <strong>- James Walter, UK</strong>
+    </div>
+  </section>
+
+  <section class="section" id="book">
+    <h2>Let's Talk Growth</h2>
+    <p>Click below to chat directly on WhatsApp and explore how we can grow your brand.</p>
+    <a href="https://wa.me/918486259416" class="whatsapp-btn">Chat on WhatsApp</a>
   </section>
 
   <footer>
-    <p>&copy; 2025 The Boostonix Agency. All Rights Reserved.</p>
+    <p>&copy; 2025 Boostonix. All rights reserved.</p>
   </footer>
 </body>
 </html>
