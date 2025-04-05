@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  .boostonix-highlight {
-    background-color: #0b5ed7;
-    color: white;
-    padding: 0 6px;
-    border-radius: 6px;
-  }
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Boostonix - AI Marketing Agency</title>
@@ -18,192 +9,203 @@
   <meta name="author" content="Boostonix">
   <link rel="icon" href="https://raw.githubusercontent.com/boostonix/boostonix/main/favicon-32x32.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
   <style>
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-<script>
-window.addEventListener("load", function(){
-  window.cookieconsent.initialise({
-    palette: {
-      popup: { background: "#000" },
-      button: { background: "#00b894" }
-    },
-    theme: "classic",
-    content: {
-      message: "We use cookies to improve your experience.",
-      dismiss: "Accept All",
-      link: "Learn more",
-      href: "https://www.cookiesandyou.com"
+    :root {
+      --primary: #00b894;
+      --dark: #000000;
+      --light: #ffffff;
+      --text: #f4f4f4;
+      --accent: #1e1e1e;
     }
-  });
-});
-</script>
-    body {
-      font-family: 'Poppins', sans-serif;
+
+    * {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--accent);
+      color: var(--text);
       scroll-behavior: smooth;
     }
+
     header {
-      background: linear-gradient(to right, #000000, #1e1e1e);
-      color: white;
-      padding: 60px 20px;
+      background: linear-gradient(to right, var(--dark), var(--accent));
+      color: var(--light);
+      padding: 80px 20px;
       text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 3.5em;
-      animation: fadeInDown 1s ease-in-out;
+      font-size: 4em;
     }
+
     header p {
-      font-size: 1.3em;
-      margin-top: 10px;
-      animation: fadeIn 1.5s ease-in-out;
+      font-size: 1.5em;
+      margin-top: 15px;
     }
+
     .cta {
       margin-top: 30px;
       display: inline-block;
-      padding: 14px 35px;
-      background: #00b894;
+      padding: 16px 40px;
+      background: var(--primary);
       color: white;
+      border-radius: 40px;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      animation: fadeInUp 2s ease-in-out;
+      transition: 0.3s;
     }
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInSection 1s forwards;
-    }
-    .section:nth-of-type(2) { animation-delay: 0.3s; }
-    .section:nth-of-type(3) { animation-delay: 0.5s; }
-    .section:nth-of-type(4) { animation-delay: 0.7s; }
-    .section:nth-of-type(5) { animation-delay: 0.9s; }
 
-    .section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #111;
+    .cta:hover {
+      background: #00a17a;
     }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+
     .founder {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      gap: 40px;
     }
+
     .founder img {
-      width: 250px;
+      width: 280px;
       border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0, 255, 120, 0.2);
     }
+
     .stats, .reviews {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 30px;
     }
+
     .stat, .review {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      background: var(--dark);
+      padding: 25px;
+      border-radius: 16px;
       text-align: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     }
-    .services ul {
+
+    ul {
       list-style: none;
       padding: 0;
     }
-    .services li {
-      background: #eee;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 10px;
-    }
-    .faq ul {
-      list-style: none;
-      padding: 0;
-    }
-    .faq li {
-      background: #f1f1f1;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 10px;
-    }
-    footer {
+
+    li {
       background: #111;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 10px;
+      color: var(--text);
+    }
+
+    footer {
+      background: var(--dark);
       color: white;
       padding: 30px;
       text-align: center;
     }
-    a.whatsapp-btn {
+
+    a.whatsapp-btn, button#whatsappFormBtn {
       display: inline-block;
       background: #25D366;
       color: white;
-      padding: 12px 25px;
-      text-decoration: none;
+      padding: 14px 30px;
       border-radius: 30px;
-      margin-top: 20px;
       font-weight: bold;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
     }
+
     .form-group {
       margin: 15px 0;
     }
-    input {
+
+    input, textarea {
       width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-    }
-    button#whatsappFormBtn {
-      background: #00b894;
-      color: white;
+      padding: 12px;
+      border-radius: 10px;
       border: none;
-      padding: 12px 25px;
-      border-radius: 30px;
+      font-size: 1em;
+      background: #222;
+      color: white;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ccc;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .socials a {
+      padding: 12px 20px;
+      border-radius: 8px;
       font-weight: bold;
-      cursor: pointer;
-      margin-top: 15px;
+      text-decoration: none;
+      color: white;
     }
+
+    .insta { background: #E1306C; }
+    .linkedin { background: #0e76a8; }
+    .twitter { background: #1DA1F2; }
+
     @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
+      from { opacity: 0; transform: translateY(-30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInSection {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1><span class="boostonix-highlight">Boostonix</span></h1>
+    <h1>Boostonix</h1>
     <p>AI Powered Growth for Modern Brands</p>
     <a href="#book" class="cta">Book a Call</a>
   </header>
 
-  <section class="section founder">
-    <img src="https://raw.githubusercontent.com/boostonix/boostonix/main/founder.jpg" alt="Yash Pareek - Founder" />
+  <section class="founder">
+    <img src="https://raw.githubusercontent.com/boostonix/boostonix/main/founder.jpg" alt="Yash Pareek - Founder">
     <div>
-      <h2>Meet the Founder</h2>
+      <h2 class="section-title">Meet the Founder</h2>
       <p><strong>Yash Pareek</strong>, the visionary behind Boostonix, is passionate about scaling brands using the power of AI + Marketing. With expertise in UGC, Paid Ads, and Content Systems – he helps brands dominate their digital presence.</p>
     </div>
   </section>
 
-  <section class="section stats">
+  <section class="stats">
     <div class="stat">
       <h3>23+ Brands</h3>
       <p>Successfully scaled across various niches</p>
@@ -218,8 +220,8 @@ window.addEventListener("load", function(){
     </div>
   </section>
 
-  <section class="section services">
-    <h2>What We Offer</h2>
+  <section>
+    <h2 class="section-title">What We Offer</h2>
     <ul>
       <li>Meta (Facebook & Instagram) Ads</li>
       <li>Google Ads & YouTube Campaigns</li>
@@ -230,7 +232,7 @@ window.addEventListener("load", function(){
     </ul>
   </section>
 
-  <section class="section reviews">
+  <section class="reviews">
     <div class="review">
       <p>“Boostonix scaled our Shopify store to $80K/month within 3 months. Highly recommended!”</p>
       <strong>- Emily Carter, USA</strong>
@@ -245,8 +247,8 @@ window.addEventListener("load", function(){
     </div>
   </section>
 
-  <section class="section faq">
-    <h2>Frequently Asked Questions</h2>
+  <section>
+    <h2 class="section-title">Frequently Asked Questions</h2>
     <ul>
       <li><strong>What is Boostonix?</strong><br>Boostonix is an AI-powered marketing agency that helps businesses grow through smart advertising, UGC content, SEO, and content systems.</li>
       <li><strong>How much do your services cost?</strong><br>Our pricing depends on your business needs. We offer packages starting from $800/month. Book a free call for custom quotes.</li>
@@ -255,8 +257,8 @@ window.addEventListener("load", function(){
     </ul>
   </section>
 
-  <section class="section" id="book">
-    <h2>Free Strategy Session</h2>
+  <section id="book">
+    <h2 class="section-title">Free Strategy Session</h2>
     <p>Fill in your details and we'll contact you directly on WhatsApp.</p>
     <div class="form-group">
       <input type="text" id="name" placeholder="Your Name">
@@ -270,114 +272,50 @@ window.addEventListener("load", function(){
     <button id="whatsappFormBtn">Send on WhatsApp</button>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Boostonix. All rights reserved.</p>
-  </footer>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Boostonix | Contact & Socials</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 30px;
-      color: #333;
-    }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    h1 {
-      text-align: center;
-      color: #000;
-    }
-    .socials {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin: 30px 0;
-      gap: 15px;
-    }
-    .socials a {
-      flex: 1;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 12px;
-      border-radius: 8px;
-      color: white;
-    }
-    .insta { background: #E1306C; }
-    .linkedin { background: #0e76a8; }
-    .twitter { background: #1DA1F2; }
-
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    label {
-      margin-top: 15px;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    input, textarea {
-      padding: 10px;
-      font-size: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px;
-      background: #111;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover {
-      background: #333;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h1>Contact Boostonix</h1>
-
+  <section>
+    <h2 class="section-title">Contact Boostonix</h2>
     <div class="socials">
-      <a class="insta" href="https://www.instagram.com/theboostonix" target="_blank">Instagram 1</a>
-      <a class="insta" href="https://www.instagram.com/yashhpareekk" target="_blank">Instagram 2</a>
+      <a class="insta" href="https://www.instagram.com/theboostonix" target="_blank">Instagram</a>
+      <a class="insta" href="https://www.instagram.com/yashhpareekk" target="_blank">Instagram (Yash)</a>
       <a class="linkedin" href="https://www.linkedin.com/in/yash-pareek001/" target="_blank">LinkedIn</a>
       <a class="twitter" href="https://x.com/Boostonixagency" target="_blank">Twitter</a>
     </div>
-
     <form action="mailto:ceo@boostonix.agency" method="post" enctype="text/plain">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Your message..."></textarea>
-
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="5" placeholder="Your message..."></textarea>
+      </div>
       <button type="submit">Send Message</button>
     </form>
-  </div>
+  </section>
 
-</body>
-</html>
+  <footer>
+    <p>&copy; 2025 Boostonix. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
   <script>
+    window.addEventListener("load", function() {
+      window.cookieconsent.initialise({
+        palette: {
+          popup: { background: "#000" },
+          button: { background: "#00b894" }
+        },
+        theme: "classic",
+        content: {
+          message: "We use cookies to improve your experience.",
+          dismiss: "Accept All",
+          link: "Learn more",
+          href: "https://www.cookiesandyou.com"
+        }
+      });
+    });
+
     document.getElementById('whatsappFormBtn').addEventListener('click', function() {
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
