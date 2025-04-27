@@ -34,9 +34,6 @@
       --accent-light: #2a2a2a;
       --shadow: 0 10px 30px rgba(0, 184, 148, 0.15);
       --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-      --gradient: linear-gradient(135deg, var(--primary), var(--primary-light));
-      --ai-blue: #00d2ff;
-      --ai-purple: #3a47d5;
     }
 
     * {
@@ -51,20 +48,6 @@
       color: var(--text);
       scroll-behavior: smooth;
       overflow-x: hidden;
-      line-height: 1.6;
-    }
-
-    /* New AI Glow Effects */
-    .ai-glow {
-      text-shadow: 0 0 10px rgba(0, 210, 255, 0.7);
-    }
-
-    .ai-glow-box {
-      box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
-    }
-
-    .ai-glow-text {
-      text-shadow: 0 0 8px rgba(0, 210, 255, 0.6);
     }
 
     .gradient-text {
@@ -75,21 +58,6 @@
       display: inline-block;
     }
 
-    /* New AI Circuit Background */
-    .ai-circuit-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(to right, rgba(58, 71, 213, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(58, 71, 213, 0.05) 1px, transparent 1px);
-      background-size: 40px 40px;
-      z-index: -1;
-      opacity: 0.5;
-    }
-
     header {
       background: linear-gradient(135deg, var(--darker) 0%, var(--accent) 100%);
       color: var(--light);
@@ -97,11 +65,6 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
     }
 
     header::before {
@@ -120,73 +83,16 @@
       margin-bottom: 15px;
       position: relative;
       animation: fadeInDown 1s ease-out, float 6s ease-in-out infinite;
-      text-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
     }
 
-    /* New AI Binary Rain Effect */
-    .binary-rain {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-      opacity: 0.15;
-    }
-
-    .binary-digit {
-      position: absolute;
-      color: var(--ai-blue);
-      font-family: monospace;
-      font-size: 16px;
-      user-select: none;
-      animation: binaryFall linear infinite;
-    }
-
-    /* New AI Processing Animation */
-    .ai-processing {
-      display: inline-block;
+    header p {
+      font-size: 1.5em;
+      margin: 20px auto;
+      max-width: 700px;
       position: relative;
+      animation: fadeIn 1.2s ease-out 0.3s both;
     }
 
-    .ai-processing::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 3px;
-      bottom: -5px;
-      left: 0;
-      background: linear-gradient(90deg, transparent, var(--ai-blue), transparent);
-      background-size: 200% 100%;
-      animation: aiProcessing 2s linear infinite;
-    }
-
-    /* New AI Chip Element */
-    .ai-chip {
-      display: inline-block;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 50%;
-      padding: 15px;
-      position: relative;
-      box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
-    }
-
-    .ai-chip::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      border-top-color: var(--ai-blue);
-      border-right-color: var(--ai-purple);
-      animation: aiChipSpin 2s linear infinite;
-    }
-
-    /* Enhanced CTA with AI Glow */
     .cta {
       margin-top: 40px;
       display: inline-block;
@@ -204,8 +110,6 @@
       border: none;
       box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
       animation: fadeInUp 1s ease-out 0.6s both;
-      text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .cta::before {
@@ -222,27 +126,12 @@
     }
 
     .cta:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 8px 25px rgba(0, 184, 148, 0.6), 0 0 15px rgba(0, 210, 255, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 184, 148, 0.6);
     }
 
     .cta:hover::before {
       opacity: 1;
-    }
-
-    /* New AI Grid Background for Sections */
-    .ai-grid-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: 
-        linear-gradient(to right, rgba(0, 210, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 210, 255, 0.03) 1px, transparent 1px);
-      background-size: 30px 30px;
-      z-index: -1;
-      opacity: 0.3;
     }
 
     section {
@@ -274,7 +163,6 @@
       border-radius: 2px;
     }
 
-    /* Enhanced Founder Section with AI Elements */
     .founder {
       display: flex;
       flex-wrap: wrap;
@@ -291,87 +179,231 @@
       transition: var(--transition);
       transform: perspective(1000px) rotateY(-10deg);
       animation: fadeInLeft 1s ease-out;
-      position: relative;
-      z-index: 1;
-    }
-
-    .founder img::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(45deg, rgba(0, 184, 148, 0.1), transparent);
-      border-radius: 20px;
-      z-index: -1;
     }
 
     .founder img:hover {
-      transform: perspective(1000px) rotateY(0deg) scale(1.03);
-      box-shadow: 0 15px 40px rgba(0, 184, 148, 0.3), 0 0 20px rgba(0, 210, 255, 0.3);
+      transform: perspective(1000px) rotateY(0deg);
+      box-shadow: 0 15px 40px rgba(0, 184, 148, 0.3);
     }
 
-    /* Enhanced Services with AI Icons */
-    .service-icon {
+    .founder div {
+      flex: 1;
+      min-width: 300px;
+      animation: fadeInRight 1s ease-out;
+    }
+
+    .founder p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin-top: 20px;
+      color: var(--text-light);
+    }
+
+    .stats, .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .stat, .review {
+      background: linear-gradient(145deg, var(--accent), var(--darker));
+      padding: 35px 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       transition: var(--transition);
-      display: inline-block;
-      text-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
-    }
-
-    li:hover .service-icon {
-      transform: rotate(15deg) scale(1.2);
-      color: var(--primary-light);
-      text-shadow: 0 0 15px rgba(0, 210, 255, 0.8);
-    }
-
-    /* New AI Data Visualization Effect */
-    .ai-data-viz {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      opacity: 0.1;
-    }
-
-    .ai-data-line {
-      position: absolute;
-      background: linear-gradient(to right, transparent, var(--ai-blue), transparent);
-      height: 1px;
-      animation: aiDataFlow linear infinite;
-    }
-
-    /* New AI Chat Bubble */
-    .ai-chat-bubble {
+      border: 1px solid rgba(255,255,255,0.05);
       position: relative;
-      background: rgba(58, 71, 213, 0.2);
-      border-radius: 20px;
-      padding: 15px 20px;
-      margin: 20px 0;
-      border: 1px solid rgba(0, 210, 255, 0.3);
-      box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
+      overflow: hidden;
     }
 
-    .ai-chat-bubble::before {
+    .stat::before, .review::before {
       content: '';
       position: absolute;
-      top: -10px;
-      left: 20px;
-      width: 0;
-      height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 10px solid rgba(58, 71, 213, 0.2);
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,184,148,0.1) 0%, rgba(0,184,148,0) 70%);
+      transition: var(--transition);
+      opacity: 0;
     }
 
-    /* New AI Glowing Form Inputs */
+    .stat:hover, .review:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 184, 148, 0.2);
+    }
+
+    .stat:hover::before, .review:hover::before {
+      opacity: 1;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    li {
+      background: linear-gradient(145deg, var(--accent), var(--accent-light));
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 12px;
+      color: var(--text);
+      transition: var(--transition);
+      border-left: 4px solid var(--primary);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    li:hover {
+      transform: translateX(10px);
+      background: linear-gradient(145deg, var(--accent-light), var(--accent));
+    }
+
+    footer {
+      background: linear-gradient(135deg, var(--darker) 0%, var(--accent) 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgwLDE4NCwxNDgsMC4wNSkiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=');
+      opacity: 0.6;
+    }
+
+    a.whatsapp-btn, button#whatsappFormBtn {
+      display: inline-block;
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+      padding: 16px 35px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-top: 30px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 1.1em;
+      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    a.whatsapp-btn::before, button#whatsappFormBtn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #128C7E, #25D366);
+      z-index: -1;
+      transition: var(--transition);
+      opacity: 0;
+    }
+
+    a.whatsapp-btn:hover, button#whatsappFormBtn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+    }
+
+    a.whatsapp-btn:hover::before, button#whatsappFormBtn:hover::before {
+      opacity: 1;
+    }
+
+    .form-group {
+      margin: 20px 0;
+      position: relative;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: none;
+      font-size: 1em;
+      background: var(--accent-light);
+      color: white;
+      transition: var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
     input:focus, textarea:focus {
       outline: none;
-      border-color: var(--ai-blue);
-      box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.2), 0 0 15px rgba(0, 210, 255, 0.2);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.2);
       background: var(--accent);
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #aaa;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .socials a {
+      padding: 14px 25px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .socials a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, rgba(0,0,0,0.2), transparent);
+      z-index: -1;
+      transition: var(--transition);
+      opacity: 0;
+    }
+
+    .socials a:hover {
+      transform: translateY(-5px);
+    }
+
+    .socials a:hover::before {
+      opacity: 1;
+    }
+
+    .insta { 
+      background: linear-gradient(45deg, #E1306C, #833AB4);
+    }
+    .linkedin { 
+      background: linear-gradient(45deg, #0077B5, #00A0DC);
+    }
+    .twitter { 
+      background: linear-gradient(45deg, #1DA1F2, #0f7bc0);
     }
 
     /* Animations */
@@ -410,66 +442,6 @@
       50% { transform: scale(1.05); }
     }
 
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-      40% { transform: translateY(-20px) translateX(-50%); }
-      60% { transform: translateY(-10px) translateX(-50%); }
-    }
-
-    @keyframes gradientBorder {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes floatAi {
-      0% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(5deg); }
-      100% { transform: translateY(0) rotate(0deg); }
-    }
-
-    /* New AI Binary Rain Animation */
-    @keyframes binaryFall {
-      from { transform: translateY(-100px); }
-      to { transform: translateY(calc(100vh + 100px)); }
-    }
-
-    /* New AI Processing Animation */
-    @keyframes aiProcessing {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* New AI Chip Animation */
-    @keyframes aiChipSpin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* New AI Data Flow Animation */
-    @keyframes aiDataFlow {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    /* New Typing Animation */
-    .typing-text {
-      display: inline-block;
-      position: relative;
-    }
-
-    .typing-text::after {
-      content: '|';
-      position: absolute;
-      right: -8px;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
     /* Particles background effect */
     .particles {
       position: absolute;
@@ -493,28 +465,6 @@
       10% { opacity: 1; }
       90% { opacity: 1; }
       100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
-    }
-
-    /* New wave divider */
-    .wave-divider {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-      transform: rotate(180deg);
-    }
-
-    .wave-divider svg {
-      position: relative;
-      display: block;
-      width: calc(100% + 1.3px);
-      height: 100px;
-    }
-
-    .wave-divider .shape-fill {
-      fill: var(--dark);
     }
 
     /* Responsive adjustments */
@@ -570,48 +520,21 @@
   <!-- Particles background -->
   <div class="particles" id="particles"></div>
 
-  <!-- AI Circuit Background -->
-  <div class="ai-circuit-bg"></div>
-
-  <!-- Binary Rain Effect -->
-  <div class="binary-rain" id="binaryRain"></div>
-
-  <!-- AI Data Visualization -->
-  <div class="ai-data-viz" id="aiDataViz"></div>
-
   <header>
-    <div class="ai-chip">
-      <i class="fas fa-brain" style="font-size: 2em; color: var(--ai-blue);"></i>
-    </div>
-    <h1 class="gradient-text ai-glow">Boostonix</h1>
-    <p><span class="typing-text ai-processing">AI Powered Growth for Modern Brands</span></p>
-    <a href="#book" class="cta pulse-animate ai-glow-box">Book a Call</a>
-    
-    <!-- Scroll down arrow -->
-    <div class="scroll-down" onclick="document.querySelector('.founder').scrollIntoView({ behavior: 'smooth' })">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-    
-    <!-- Wave divider -->
-    <div class="wave-divider">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-      </svg>
-    </div>
+    <h1 class="gradient-text">Boostonix</h1>
+    <p>AI Powered Growth for Modern Brands</p>
+    <a href="#book" class="cta pulse-animate">Book a Call</a>
   </header>
 
   <section class="founder">
     <img src="https://raw.githubusercontent.com/boostonix/boostonix/main/founder.jpg" alt="Yash Pareek - Founder">
     <div>
-      <h2 class="section-title ai-glow-text">Meet the Founder</h2>
-      <div class="ai-chat-bubble">
-        <p><strong>Yash Pareek</strong>, the founder of <strong>Boostonix</strong>, is not your average digital marketer. He's a new-age growth architect who blends cutting-edge AI with high-converting marketing strategies to engineer scale for modern brands.</p>
-      </div>
-      <p>With deep expertise in <strong class="ai-glow-text">UGC-driven funnels, paid media, content systems,</strong> and <strong class="ai-glow-text">digital automation</strong>, Yash is on a mission to help ambitious businesses not just grow—but dominate their industry. Every brand he partners with gets more than just "marketing." They get a strategic weapon built for exponential growth.</p>
+      <h2 class="section-title">Meet the Founder</h2>
+      <p><strong>Yash Pareek</strong>, the founder of <strong>Boostonix</strong>, is not your average digital marketer. He's a new-age growth architect who blends cutting-edge AI with high-converting marketing strategies to engineer scale for modern brands. With deep expertise in <strong>UGC-driven funnels, paid media, content systems,</strong> and <strong>digital automation</strong>, Yash is on a mission to help ambitious businesses not just grow—but dominate their industry. Every brand he partners with gets more than just "marketing." They get a strategic weapon built for exponential growth.</p>
     </div>
   </section>
 
- <section>
+  <section>
     <h2 class="section-title">What We Offer</h2>
     <ul>
       <li><i class="fas fa-ad" style="color: var(--primary); margin-right: 10px;"></i> Meta (Facebook & Instagram) Ads</li>
@@ -625,34 +548,28 @@
   </section>
 
   <section>
-    <div class="ai-grid-bg"></div>
-    <h2 class="section-title ai-glow-text">Our AI Advantage</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
-      <div class="gradient-border ai-glow-box" style="padding: 30px; text-align: center;">
-        <div class="ai-chip" style="margin-bottom: 20px;">
-          <i class="fas fa-robot" style="font-size: 2em; color: var(--ai-blue);"></i>
-        </div>
-        <h3 style="margin-bottom: 15px;">Predictive Analytics</h3>
-        <p>Our AI models analyze thousands of data points to predict campaign performance before launch.</p>
-      </div>
-      <div class="gradient-border ai-glow-box" style="padding: 30px; text-align: center;">
-        <div class="ai-chip" style="margin-bottom: 20px;">
-          <i class="fas fa-bolt" style="font-size: 2em; color: var(--ai-blue);"></i>
-        </div>
-        <h3 style="margin-bottom: 15px;">Automated Optimization</h3>
-        <p>Real-time AI adjustments to maximize your ROAS without manual intervention.</p>
-      </div>
-      <div class="gradient-border ai-glow-box" style="padding: 30px; text-align: center;">
-        <div class="ai-chip" style="margin-bottom: 20px;">
-          <i class="fas fa-chart-line" style="font-size: 2em; color: var(--ai-blue);"></i>
-        </div>
-        <h3 style="margin-bottom: 15px;">Smart Scaling</h3>
-        <p>AI identifies the best opportunities to scale your campaigns profitably.</p>
-      </div>
-    </div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <ul>
+      <li>
+        <strong><i class="fas fa-question-circle" style="color: var(--primary); margin-right: 10px;"></i> What is Boostonix?</strong><br>
+        Boostonix is an AI-powered marketing agency that helps businesses grow through smart advertising, UGC content, SEO, and content systems.
+      </li>
+      <li>
+        <strong><i class="fas fa-dollar-sign" style="color: var(--primary); margin-right: 10px;"></i> How much do your services cost?</strong><br>
+        Our pricing depends on your business needs. We offer packages starting from $800/month. Book a free call for custom quotes.
+      </li>
+      <li>
+        <strong><i class="fas fa-globe" style="color: var(--primary); margin-right: 10px;"></i> Do you work with international clients?</strong><br>
+        Yes! We work with brands in the USA, UK, India, and many more countries globally.
+      </li>
+      <li>
+        <strong><i class="fas fa-rocket" style="color: var(--primary); margin-right: 10px;"></i> How do I get started?</strong><br>
+        Click the "Book a Call" button above, fill in your details, and our team will contact you via WhatsApp.
+      </li>
+    </ul>
   </section>
 
-   <section id="book">
+  <section id="book">
     <h2 class="section-title">Free Strategy Session</h2>
     <p style="text-align: center; margin-bottom: 30px; color: var(--text-light);">Fill in your details and we'll contact you directly on WhatsApp.</p>
     <div class="form-group">
