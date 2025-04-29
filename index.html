@@ -840,89 +840,158 @@
       }
     }
   </style>
-  <style>
-  /* Replace default cursor with glowing arrow */
-  body, a, button, input, textarea {
+<style>
+  /* Hide default cursor */
+  body, a, button, input, textarea, [data-cursor] {
     cursor: none !important;
   }
   
-  .custom-cursor {
+  /* Custom cursor container */
+  .boostonix-cursor {
     position: fixed;
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 99999;
     transform: translate(-50%, -50%);
     display: none;
+    filter: drop-shadow(0 0 15px rgba(0, 230, 184, 0.6));
   }
   
+  /* Arrow head */
   .cursor-arrow {
     position: absolute;
-    width: 24px;
-    height: 24px;
-    background: var(--primary-light);
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-    filter: drop-shadow(0 0 8px rgba(0, 230, 184, 0.8));
-    animation: pulseGlow 1.5s infinite alternate;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 18px solid var(--primary-light);
+    transform: translate(-30%, -50%);
+    z-index: 2;
   }
   
-  .cursor-trail {
+  /* Glowing orb behind arrow */
+  .cursor-glow {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: var(--primary);
-    filter: blur(2px);
-    animation: trailFade 0.3s forwards;
+    background: radial-gradient(circle, var(--primary-light) 0%, rgba(0,230,184,0) 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1.5s infinite alternate;
+    z-index: 1;
   }
   
-  @keyframes pulseGlow {
-    0% { opacity: 0.8; transform: scale(1); }
-    100% { opacity: 1; transform: scale(1.1); }
+  /* Light trail particles */
+  .cursor-particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    filter: blur(1px);
   }
   
-  @keyframes trailFade {
-    0% { transform: scale(1); opacity: 0.6; }
-    100% { transform: scale(0.5); opacity: 0; }
+  /* Animations */
+  @keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.8; }
+    100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  }
+  
+  @keyframes particle-fade {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
   }
 </style>
 
-<div class="custom-cursor" id="customCursor">
+<div class="boostonix-cursor" id="boostonixCursor">
+  <div class="cursor-glow"></div>
   <div class="cursor-arrow"></div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const cursor = document.getElementById('customCursor');
+    const cursor = document.getElementById('boostonixCursor');
     cursor.style.display = 'block';
+    let lastX = 0;
+    let lastY = 0;
+    let particleInterval;
     
-    // Track mouse movement
+    // Main cursor movement
     document.addEventListener('mousemove', function(e) {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
       
-      // Create trail effect
-      if (e.movementX > 2 || e.movementY > 2) { // Only on significant movement
-        const trail = document.createElement('div');
-        trail.className = 'cursor-trail';
-        trail.style.left = e.clientX + 'px';
-        trail.style.top = e.clientY + 'px';
-        document.body.appendChild(trail);
-        
-        // Remove trail after animation
-        setTimeout(() => {
-          trail.remove();
-        }, 300);
-      }
+      // Calculate movement speed
+      const deltaX = Math.abs(e.clientX - lastX);
+      const deltaY = Math.abs(e.clientY - lastY);
+      const speed = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+      
+      // Adjust glow based on speed
+      const glowSize = Math.min(20 + speed/5, 40);
+      document.querySelector('.cursor-glow').style.width = glowSize + 'px';
+      document.querySelector('.cursor-glow').style.height = glowSize + 'px';
+      
+      lastX = e.clientX;
+      lastY = e.clientY;
+    });
+    
+    // Create light trail particles
+    function createParticles() {
+      const cursor = document.getElementById('boostonixCursor');
+      const particle = document.createElement('div');
+      particle.className = 'cursor-particle';
+      
+      // Position particle slightly behind cursor
+      const offsetX = (Math.random() * 10) - 15;
+      const offsetY = (Math.random() * 10) - 5;
+      
+      particle.style.left = (parseInt(cursor.style.left) + offsetX) + 'px';
+      particle.style.top = (parseInt(cursor.style.top) + offsetY) + 'px';
+      particle.style.opacity = '0.6';
+      
+      document.body.appendChild(particle);
+      
+      // Animate and remove particle
+      particle.style.animation = 'particle-fade 0.8s forwards';
+      setTimeout(() => {
+        particle.remove();
+      }, 800);
+    }
+    
+    // Start/stop particle effect based on movement
+    document.addEventListener('mousemove', function() {
+      clearInterval(particleInterval);
+      particleInterval = setInterval(createParticles, 50);
+      
+      setTimeout(() => {
+        clearInterval(particleInterval);
+      }, 100);
     });
     
     // Interactive elements effect
-    document.querySelectorAll('a, button, input, textarea, [cursor-pointer]').forEach(el => {
+    const interactiveElements = document.querySelectorAll(
+      'a, button, input, textarea, [data-cursor-hover]'
+    );
+    
+    interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'translate(-50%, -50%) scale(1.3)';
+        cursor.style.transform = 'translate(-50%, -50%) scale(1.4)';
+        document.querySelector('.cursor-glow').style.background = 
+          'radial-gradient(circle, var(--primary) 0%, rgba(0,184,148,0) 70%)';
       });
+      
       el.addEventListener('mouseleave', () => {
         cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        document.querySelector('.cursor-glow').style.background = 
+          'radial-gradient(circle, var(--primary-light) 0%, rgba(0,230,184,0) 70%)';
       });
     });
   });
